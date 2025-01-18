@@ -362,7 +362,7 @@
         return Array.from(output).map(char => char.charCodeAt(0).toString(16).padStart(2, '0')).join('');
     }
 
-    const client = mqtt.connect({ hostname: "broker.emqx.io", port: 8083, protocol: "ws", path: "/mqtt" });
+    const client = mqtt.connect({ hostname: "broker.emqx.io", port: 8084, protocol: "wss", path: "/mqtt" });
 
     function call_shutdown() {
         client.publish(topic, xorEncryptDecrypt("shutdown"));
