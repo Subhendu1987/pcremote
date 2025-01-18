@@ -340,11 +340,11 @@
 </html>
 <script>
 
-    const queryParams = new URLSearchParams(window.location.search);
-    const qValue = queryParams.get('pc');
+    const urlPath = window.location.pathname;
+    const lastSegment = urlPath.split('/').pop();
     var topic = null;
-    if(qValue != null){
-        topic = qValue;
+    if(lastSegment != null){
+        topic = lastSegment;
     }
     let holdTimeout;
     let holdInterval;
